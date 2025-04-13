@@ -1,37 +1,80 @@
+:host {
+  display: block;
+}
+
 .container {
-  width: 70%; // A tartalom szélessége 70%
-  margin: 0 auto; // Középre igazítás
-  padding: 1rem 0; // Függőleges padding, hogy ne érjen a toolbarhoz
+  width: 70%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1976d2;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.intro-image {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  strong {
+    color: #1976d2;
+  }
 }
 
 .card-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem 0; // Padding csak függőlegesen
+  padding: 1rem 0;
 }
 
 .card {
   width: 100%;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
-  // Háttérképek hozzáadása
   background-size: cover;
   background-position: center;
-  // Az északi és déli kártyákhoz különböző képek
+  background-color: #ccc;
   &:nth-child(1) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/app/assets/images/eszaki_part.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/eszaki_part.jpeg');
   }
   &:nth-child(2) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/app/assets/images/deli_part.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/deli_part.jpg');
   }
-  // Szöveg középre igazítása
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px; // Fix magasság a kártyáknak, hogy a háttérkép jól látható legyen
-  color: white; // Fehér szöveg a sötét háttér miatt
+  height: 200px;
+  color: white;
 }
 
 .card:hover {
@@ -41,11 +84,37 @@
 
 mat-card-title,
 mat-card-content {
-  text-align: center; // Szöveg középre igazítása
+  text-align: center;
 }
 
-mat-toolbar {
-  background-color: #1976d2; // Kék
-  color: white;
-  font-weight: bold;
+/* Divider formázása */
+.divider {
+  margin: 2rem 0; // Térköz felül és alul
+}
+
+/* Szöveg és gomb formázása */
+.search-section {
+  text-align: center; // Középre igazítás
+  margin-bottom: 2rem; // Térköz alul
+}
+
+.search-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.search-button {
+  background-color: #1976d2; // Kék szín, hogy illeszkedjen a dizájnhoz
+  color: white; // Fehér szöveg
+  padding: 0.75rem 2rem; // Nagyobb padding a nagyobb gombhoz
+  font-size: 1.2rem; // Nagyobb betűméret
+  border-radius: 8px; // Lekerekített sarkok
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Árnyék
+  transition: transform 0.2s ease-in-out; // Hover animáció
+
+  &:hover {
+    transform: scale(1.05); // Finom nagyítás hoverkor
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); // Erősebb árnyék
+  }
 }

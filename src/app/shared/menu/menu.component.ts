@@ -38,9 +38,9 @@ export class MenuComponent {
   checkScreenSize() {
     this.isLargeScreen = window.innerWidth >= 768;
     if (this.isLargeScreen) {
-      this.isSidenavOpen = true; // Nagyobb képernyőn automatikusan nyitva
+      this.isSidenavOpen = true;
     } else {
-      this.isSidenavOpen = false; // Kisebb képernyőn alapértelmezettként zárva
+      this.isSidenavOpen = false;
     }
   }
 
@@ -50,7 +50,7 @@ export class MenuComponent {
 
   closeSidenav() {
     if (!this.isLargeScreen) {
-      this.isSidenavOpen = false; // Csak kisebb képernyőn zárjuk be
+      this.isSidenavOpen = false;
     }
   }
 }

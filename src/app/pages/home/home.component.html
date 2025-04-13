@@ -1,7 +1,20 @@
 <div class="container">
-  <h1>Fedezd fel az összes balatoni látnivalót!</h1>    
-  <h2>Fedezd fel a Balaton csodáit!
-      Magyarország legnagyobb tava nemcsak fürdésre és nyári kikapcsolódásra tökéletes – a környék tele van varázslatos látnivalókkal, történelmi emlékhelyekkel, természeti csodákkal és eldugott gyöngyszemekkel. Böngéssz a legérdekesebb balatoni helyek között, és tervezd meg a következő kirándulásod velünk!</h2>   
+  <h1>Fedezd fel az összes balatoni látnivalót!</h1>
+  
+  <!-- Kép helye -->
+  <div class="intro-image">
+    <img src="../../assets/images/balaton_nyito.jpg" alt="Balatoni tájkép">
+  </div>
+  
+  <!-- Bevezető szöveg -->
+  <div class="intro-text">
+    <p><strong>Üdvözöljük a Balaton világában!</strong></p>
+    <p>Fedezze fel Magyarország legnagyobb tavának lenyűgöző környékét, ahol a természet szépsége, a történelmi kincsek és a modern kikapcsolódási lehetőségek tökéletes harmóniában találkoznak.</p>
+    <p>Oldalunkon könnyedén böngészhet a legjobb balatoni látnivalók között: legyen szó az északi part festői tájairól, a déli part nyüzsgő strandjairól, vagy eldugott kis falvak rejtett kincseiről.</p>
+    <p>Tervezze meg kirándulását nálunk, és élje át a Balaton varázsát!</p>
+  </div>
+  
+  <!-- Kártyák -->
   <div class="card-container">
     <mat-card class="card" routerLink="/eszak">
       <mat-card-title>Menj Északra</mat-card-title>
@@ -12,5 +25,14 @@
       <mat-card-title>Menj Délre</mat-card-title>
       <mat-card-content>Fedezd fel a déli partot!</mat-card-content>
     </mat-card>
+  </div>
+
+  <!-- Material Divider -->
+  <mat-divider class="divider"></mat-divider>
+
+  <!-- Szöveg és gomb -->
+  <div class="search-section">
+    <p class="search-text">Nem tudja, mit keres? Böngésszen szabadon a látnivalók között, és találja meg a tökéletes úti célt!</p>
+    <button mat-raised-button class="search-button" routerLink="/kereses">Keresés</button>
   </div>
 </div>
