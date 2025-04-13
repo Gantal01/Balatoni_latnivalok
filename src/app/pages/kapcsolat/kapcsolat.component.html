@@ -1,5 +1,13 @@
 <div class="container">
     <h2>Kapcsolat</h2>
+  
+    <!-- Bevezető szöveg -->
+    <div class="intro-text">
+      <p><strong>Lépjen velünk kapcsolatba!</strong></p>
+      <p>Ha új eseményt vagy helyszínt szeretne javasolni a Balaton környékéről, vagy bármilyen problémája van, küldjön nekünk üzenetet.</p>
+      <p>Örömmel várjuk visszajelzését, hogy még jobbá tehessük oldalunkat!</p>
+    </div>
+  
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Email cím</mat-label>
@@ -11,7 +19,7 @@
           Kérlek, adj meg egy érvényes email címet
         </mat-error>
       </mat-form-field>
-
+  
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Üzenet tárgya</mat-label>
         <input matInput formControlName="subject" placeholder="Tárgy">
@@ -19,7 +27,7 @@
           Az üzenet tárgyának megadása kötelező
         </mat-error>
       </mat-form-field>
-
+  
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Üzenet</mat-label>
         <textarea matInput formControlName="message" rows="5" placeholder="Írd ide az üzeneted..."></textarea>
@@ -27,11 +35,11 @@
           Az üzenet megadása kötelező
         </mat-error>
       </mat-form-field>
-
+  
       <div class="button-container">
         <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">
           Küldés
         </button>
       </div>
     </form>
-</div>
+  </div>
