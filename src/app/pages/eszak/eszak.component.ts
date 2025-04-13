@@ -10,32 +10,8 @@ import { AttractionCardComponent } from '../../shared/attraction-card/attraction
   selector: 'app-eszak',
   standalone: true,
   imports: [MatCardModule, CommonModule, AttractionCardComponent],
-  template: `
-    <div class="container">
-      <h2>Északi part látnivalói</h2>
-      <div class="card-container">
-        <app-attraction-card
-          *ngFor="let attraction of northAttractions"
-          [attraction]="attraction"
-          (eventsToggled)="onEventsToggled($event)">
-        </app-attraction-card>
-      </div>
-    </div>
-  `,
-  styles: [
-    `
-      .container {
-        padding: 16px;
-        text-align: center;
-      }
-      .card-container {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-    `
-  ]
+  templateUrl: './eszak.component.html',
+  styleUrls: ['./eszak.component.scss']
 })
 export class EszakComponent implements OnInit {
   northAttractions: Attraction[] = [];

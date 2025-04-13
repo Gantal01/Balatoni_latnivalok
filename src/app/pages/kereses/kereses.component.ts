@@ -20,58 +20,8 @@ import { AttractionCardComponent } from '../../shared/attraction-card/attraction
     MatSelectModule,
     AttractionCardComponent
   ],
-  template: `
-    <div class="container">
-      <h2>Keresés</h2>
-      <form [formGroup]="filterForm" class="filter-form">
-        <mat-form-field appearance="outline" class="filter-field">
-          <mat-label>Város</mat-label>
-          <mat-select formControlName="city">
-            <mat-option value="">Összes város</mat-option>
-            <mat-option *ngFor="let location of locations" [value]="location.id">
-              {{ location.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="filter-field">
-          <mat-label>Esemény neve</mat-label>
-          <input matInput formControlName="eventName" placeholder="Pl. Balatoni Borfesztivál">
-        </mat-form-field>
-      </form>
-
-      <div class="card-container">
-        <app-attraction-card
-          *ngFor="let attraction of filteredAttractions"
-          [attraction]="attraction"
-          (eventsToggled)="onEventsToggled($event)">
-        </app-attraction-card>
-      </div>
-    </div>
-  `,
-  styles: [
-    `
-      .container {
-        padding: 16px;
-        text-align: center;
-      }
-      .filter-form {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        margin-bottom: 24px;
-      }
-      .filter-field {
-        width: 200px;
-      }
-      .card-container {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-    `
-  ]
+  templateUrl: './kereses.component.html',
+  styleUrls: ['./kereses.component.scss']
 })
 export class KeresesComponent implements OnInit {
   filterForm: FormGroup;

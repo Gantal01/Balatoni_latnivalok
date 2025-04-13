@@ -1,1 +1,9 @@
-<p>del works!</p>
+<div class="container">
+    <h2>Déli part látnivalói</h2>
+    <div class="card-container">
+      <app-attraction-card
+        *ngFor="let attraction of southAttractions"
+        [attraction]="attraction">
+      </app-attraction-card>
+    </div>
+  </div>

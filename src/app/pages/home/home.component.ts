@@ -7,7 +7,7 @@ import { RouterLink, Router } from '@angular/router';
   standalone: true,
   templateUrl: './home.component.html',
   imports: [MatCardModule, RouterLink],
-  styles: []
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
 

@@ -1,1 +1,10 @@
-<p>eszak works!</p>
+<div class="container">
+    <h2>Északi part látnivalói</h2>
+    <div class="card-container">
+      <app-attraction-card
+        *ngFor="let attraction of northAttractions"
+        [attraction]="attraction"
+        (eventsToggled)="onEventsToggled($event)">
+      </app-attraction-card>
+    </div>
+</div>
