@@ -3,7 +3,7 @@ import { Location } from '../models/location.model';
 import { Category } from '../models/category.model';
 import { Event } from '../models/event.model';
 
-// Locations kollekció - "Északi part" és "Déli part" előtagok eltávolítva
+
 export const locations: Location[] = [
   // Északi part helyszínei
   new Location(1, 'Balatonfüred', 'north', 'Balatonfüred, Tagore sétány'),
@@ -22,7 +22,7 @@ export const locations: Location[] = [
   new Location(12, 'Balatonszemes', 'south', 'Balatonszemes, Központi strand')
 ];
 
-// Categories kollekció - Változatlan
+// Categories kollekció
 export const categories: Category[] = [
   new Category(1, 'Strand', 'Pihenés és fürdőzés a Balaton partján'),
   new Category(2, 'Múzeum', 'Történelmi és kulturális kiállítások'),
@@ -32,7 +32,7 @@ export const categories: Category[] = [
   new Category(6, 'Természeti látványosság', 'A Balaton természeti kincsei')
 ];
 
-// Events kollekció - Változatlan
+// Events kollekció
 export const events: Event[] = [
   // Északi part eseményei
   new Event(1, 1, 'Balatonfüredi Borfesztivál', new Date('2025-07-15'), 'Borfesztivál Balatonfüreden, helyi borokkal és kulturális programokkal.'),
@@ -63,7 +63,7 @@ export const events: Event[] = [
   new Event(24, 12, 'Balatonszemesi Gyermekfesztivál', new Date('2025-08-01'), 'Családi programok és játékok Balatonszemesen.')
 ];
 
-// Attractions kollekció - Változatlan
+// Attractions kollekció
 export const attractions: Attraction[] = [
   // Északi part látnivalói
   new Attraction(
@@ -177,3 +177,14 @@ export const attractions: Attraction[] = [
     [events[22], events[23]] // Halnapok, Gyermekfesztivál
   )
 ];
+
+export class Data {
+  constructor(
+    public locations: Location[] = [],
+    public categories: Category[] = [],
+    public events: Event[] = [],
+    public attractions: Attraction[] = []
+  ) {}
+}
+
+export const dataInstance = new Data(locations, categories, events, attractions);

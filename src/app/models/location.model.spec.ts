@@ -2,6 +2,7 @@ import { Location } from './location.model';
 
 describe('Location', () => {
   it('should create an instance', () => {
-    expect(new Location()).toBeTruthy();
+    const location = new Location(1, 'Teszt', 'north', 'Teszt, Teszt');
+    expect(location).toBeTruthy();
   });
 });

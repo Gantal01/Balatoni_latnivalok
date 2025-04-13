@@ -87,15 +87,13 @@ mat-card-content {
   text-align: center;
 }
 
-/* Divider formázása */
 .divider {
-  margin: 2rem 0; // Térköz felül és alul
+  margin: 2rem 0; 
 }
 
-/* Szöveg és gomb formázása */
 .search-section {
-  text-align: center; // Középre igazítás
-  margin-bottom: 2rem; // Térköz alul
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .search-text {
@@ -105,16 +103,16 @@ mat-card-content {
 }
 
 .search-button {
-  background-color: #1976d2; // Kék szín, hogy illeszkedjen a dizájnhoz
-  color: white; // Fehér szöveg
-  padding: 0.75rem 2rem; // Nagyobb padding a nagyobb gombhoz
-  font-size: 1.2rem; // Nagyobb betűméret
-  border-radius: 8px; // Lekerekített sarkok
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Árnyék
-  transition: transform 0.2s ease-in-out; // Hover animáció
+  background-color: #1976d2;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.05); // Finom nagyítás hoverkor
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); // Erősebb árnyék
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 }

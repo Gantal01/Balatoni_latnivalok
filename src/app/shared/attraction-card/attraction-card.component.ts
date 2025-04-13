@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { MatExpansionModule } from '@angular/material/expansion'; // Hozzáadjuk
+import { MatExpansionModule } from '@angular/material/expansion';
 import { Attraction } from '../../models/attraction.model';
 import { CalendarPipe } from '../pipes/calendar.pipe';
 

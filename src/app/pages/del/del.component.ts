@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { Attraction } from '../../models/attraction.model';
-import { Location } from '../../models/location.model';
 import { attractions, locations } from '../../data/data.data';
 import { AttractionCardComponent } from '../../shared/attraction-card/attraction-card.component';
 

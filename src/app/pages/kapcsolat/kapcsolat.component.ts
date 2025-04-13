@@ -32,7 +32,6 @@ export class KapcsolatComponent {
   onSubmit(): void {
     if (this.contactForm.valid) {
       console.log('Űrlap elküldve:', this.contactForm.value);
-      // Itt lehetne egy API hívás vagy más logika az űrlap adatainak elküldésére
       alert('Üzenet elküldve! Köszönjük, hogy kapcsolatba léptél velünk.');
       this.contactForm.reset();
     }

@@ -12,7 +12,6 @@
     </mat-sidenav>
   
     <mat-sidenav-content>
-      <!-- Felső menü -->
       <mat-toolbar color="primary">
         <!-- Kis képernyőn hamburger ikon -->
         <button mat-icon-button (click)="toggleSidenav()" *ngIf="!isLargeScreen">
@@ -29,7 +28,6 @@
         </ng-container>
       </mat-toolbar>
   
-      <!-- A tartalom -->
       <ng-content></ng-content>
     </mat-sidenav-content>
   

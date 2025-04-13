@@ -2,6 +2,7 @@ import { Category } from './category.model';
 
 describe('Category', () => {
   it('should create an instance', () => {
-    expect(new Category()).toBeTruthy();
+    const category = new Category(1, 'Teszt', 'Teszt');
+    expect(category).toBeTruthy();
   });
 });
