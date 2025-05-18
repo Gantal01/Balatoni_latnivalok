@@ -22,7 +22,7 @@ mat-toolbar {
   display: flex;
   justify-content: center;
 
-  button {
+  button[mat-icon-button] {
     color: white;
     margin-right: 16px;
   }
@@ -33,7 +33,9 @@ mat-toolbar {
     flex-grow: 1;
   }
 
-  a {
+  // Közös stílus a linkekre és gombokra
+  a[mat-button],
+  button[mat-button] {
     color: white;
     text-decoration: none;
     margin: 0 16px;
@@ -48,6 +50,31 @@ mat-toolbar {
       background-color: white;
       color: black;
       text-decoration: none;
+    }
+  }
+}
+
+// Oldalsó menü gombjainak formázása
+mat-sidenav {
+  mat-nav-list {
+    button[mat-button] {
+      color: #1976d2; // Alapértelmezett szín az oldalsó menüben
+      text-decoration: none;
+      margin: 0 16px;
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+      width: calc(100% - 32px); // Teljes szélesség mínusz margó
+      text-align: left;
+
+      &:hover {
+        background-color: #1976d2;
+        color: white;
+        text-decoration: none;
+      }
     }
   }
 }

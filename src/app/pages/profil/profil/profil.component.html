@@ -1,1 +1,11 @@
-<p>profil works!</p>
+<div *ngIf="user$ | async as user; else noUser">
+    <h2>Profil</h2>
+    <p><strong>Név:</strong> {{ user.displayName }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Szerepkör:</strong> {{ user.role }}</p>
+    <button (click)="logout()">Kijelentkezés</button>
+  </div>
+  
+  <ng-template #noUser>
+    <p>Nincs bejelentkezett felhasználó.</p>
+  </ng-template>
