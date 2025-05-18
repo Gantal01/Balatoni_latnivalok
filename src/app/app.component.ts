@@ -16,10 +16,3 @@ import { bootstrapApplication } from '@angular/platform-browser';
 export class AppComponent {
   title = 'balaton'
 }
-
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes),
-    { provide: BrowserAnimationsModule }
-  ]
-}).catch(err => console.error(err));
