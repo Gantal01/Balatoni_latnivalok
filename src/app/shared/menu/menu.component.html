@@ -32,6 +32,7 @@
           <a mat-button routerLink="/eszak">Északi part</a>
           <a mat-button routerLink="/del">Déli part</a>
           <a mat-button routerLink="/kapcsolat">Kapcsolat</a>
+          <a mat-button routerLink="/kereses">Keresés</a>
           <ng-container *ngIf="user$ | async as user; else guestLinksDesktop">
             <a mat-button routerLink="/profil">Profil</a>
             <button mat-button (click)="logout()">Kijelentkezés</button>
