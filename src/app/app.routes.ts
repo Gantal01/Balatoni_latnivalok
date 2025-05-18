@@ -7,6 +7,7 @@ import { KeresesComponent } from './pages/kereses/kereses.component';
 import { LoginComponent} from './pages/register/login/login.component';
 import { RegisterComponent } from './pages/register/register/register.component';
 import { ProfilComponent } from './pages/profil/profil/profil.component';
+import { UploadDataComponent } from './pages/admin/admin/admin.component';
 import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'kereses', component: KeresesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'upload', component: UploadDataComponent },
   { path: 'profil', component: ProfilComponent, canActivate: [authGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }
