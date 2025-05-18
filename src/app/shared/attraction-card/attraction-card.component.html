@@ -1,13 +1,22 @@
-<mat-card class="card">
+<mat-card class="card" (click)="onCardClick()">
   <mat-card-title>{{ attraction.name | uppercase }}</mat-card-title>
-  <mat-card-content>{{ attraction.description }}</mat-card-content>
-  <img *ngIf="attraction.imageUrl" mat-card-image [src]="attraction.imageUrl" alt="{{ attraction.name }}">
-  <mat-expansion-panel (opened)="onPanelOpened()" (closed)="onPanelClosed()">
+  <mat-card-content>{{ getTruncatedDescription() }}</mat-card-content>
+  <img
+    *ngIf="attraction.imageUrl"
+    mat-card-image
+    [src]="attraction.imageUrl"
+    alt="{{ attraction.name }}"
+    (click)="onImageClick(); $event.stopPropagation()">
+  <mat-expansion-panel
+    (opened)="onPanelOpened()"
+    (closed)="onPanelClosed()"
+    [expanded]="isEventsOpen"
+    (click)="$event.stopPropagation()">
     <mat-expansion-panel-header>
       <mat-panel-title>Események</mat-panel-title>
     </mat-expansion-panel-header>
     <div>
-      <p *ngFor="let event of attraction.events">
+      <p *ngFor="let event of attraction.events" class="event-item">
         {{ event | CalendarPipe }}
       </p>
     </div>

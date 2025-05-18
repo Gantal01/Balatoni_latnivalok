@@ -17,11 +17,18 @@
       </mat-form-field>
     </form>
 
+    <div *ngIf="isLoading" class="loading">Betöltés...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+
     <div class="card-container">
       <app-attraction-card
         *ngFor="let attraction of filteredAttractions"
         [attraction]="attraction"
-        (eventsToggled)="onEventsToggled($event)">
+        [showEventsByDefault]="showEventsByDefault"
+        [truncateLength]="truncateLength"
+        (panelStateChanged)="onPanelStateChanged($event)"
+        (attractionClicked)="onAttractionClicked($event)"
+        (imageClicked)="onImageClicked($event)">
       </app-attraction-card>
     </div>
 </div>

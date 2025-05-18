@@ -1,10 +1,16 @@
 <div class="container">
-    <h2>Északi part látnivalói</h2>
-    <div class="card-container">
-      <app-attraction-card
-        *ngFor="let attraction of northAttractions"
-        [attraction]="attraction"
-        (eventsToggled)="onEventsToggled($event)">
-      </app-attraction-card>
-    </div>
+  <h2>Északi part látnivalói</h2>
+  <div *ngIf="isLoading">Betöltés...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div class="card-container" *ngIf="!isLoading && !error">
+    <app-attraction-card
+      *ngFor="let attraction of northAttractions"
+      [attraction]="attraction"
+      [showEventsByDefault]="false"
+      [truncateLength]="80"
+      (panelStateChanged)="onPanelStateChanged($event)"
+      (attractionClicked)="onAttractionClicked($event)"
+      (imageClicked)="onImageClicked($event)">
+    </app-attraction-card>
+  </div>
 </div>
