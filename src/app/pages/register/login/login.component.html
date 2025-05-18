@@ -3,6 +3,9 @@
       <mat-card-title>Bejelentkezés</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+      <div class="intro-text">
+        <p>Kérjük, adja meg <strong>bejelentkezési adatait</strong>.</p>
+      </div>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>

@@ -1,0 +1,123 @@
+:host {
+    display: block;
+  }
+  
+  .profile-card {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+  
+    mat-card-header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+  
+      mat-card-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1rem;
+  
+    p {
+      margin: 0.5rem 0;
+    }
+  
+    strong {
+      color: #1976d2;
+    }
+  }
+  
+  .profile-details {
+    text-align: left;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+  
+    p {
+      margin: 0.5rem 0;
+  
+      strong {
+        color: #1976d2;
+      }
+    }
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  button[mat-raised-button],
+  button[mat-stroked-button] {
+    padding: 0 32px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+    &[mat-raised-button] {
+      background-color: #1976d2;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+  
+      &:disabled {
+        background-color: #cccccc;
+        box-shadow: none;
+        transform: none;
+      }
+    }
+  
+    &[mat-stroked-button] {
+      background-color: transparent;
+      color: #1976d2;
+      border: 2px solid #1976d2;
+      box-shadow: none;
+  
+      &:hover {
+        transform: scale(1.05);
+        background-color: #1976d2;
+        color: white;
+        border-color: #1976d2;
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .profile-card {
+      max-width: 100%;
+      margin: 1rem;
+      padding: 12px;
+    }
+  
+    button[mat-raised-button],
+    button[mat-stroked-button] {
+      padding: 0 16px;
+      font-size: 1rem;
+    }
+  }
