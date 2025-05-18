@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
-import { Firestore, doc, setDoc, docData } from '@angular/fire/firestore';
+import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, deleteUser, updateProfile} from '@angular/fire/auth';
+import { Firestore, doc, setDoc, docData, deleteDoc, updateDoc } from '@angular/fire/firestore';
 import { Observable, from, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { User } from '../../models/user';
@@ -73,4 +73,31 @@ export class AuthService {
   logout(): Observable<void> {
     return from(signOut(this.auth));
   }
+
+  deleteUserProfile(): Observable<void> {
+    const user = this.auth.currentUser;
+    if (!user) {
+      return of(void 0);
+    }
+
+    const userDocRef = doc(this.firestore, `users/${user.uid}`);
+    return from(deleteDoc(userDocRef)).pipe(
+      switchMap(() => from(deleteUser(user))),
+      switchMap(() => of(void 0))
+    );
+  }
+
+  updateUserProfile(displayName: string): Observable<void> {
+    const user = this.auth.currentUser;
+    if (!user) {
+      return of(void 0);
+    }
+
+    const userDocRef = doc(this.firestore, `users/${user.uid}`);
+    return from(updateDoc(userDocRef, { displayName })).pipe(
+      switchMap(() => from(updateProfile(user, { displayName }))),
+      switchMap(() => of(void 0))
+    );
+  }
+
 }

@@ -7,14 +7,33 @@
         <div class="intro-text">
           <p>Az Ön <strong>profil adatai</strong>.</p>
         </div>
-        <div class="profile-details">
-          <p><strong>Név:</strong> {{ user.displayName }}</p>
-          <p><strong>Email:</strong> {{ user.email }}</p>
-          <p><strong>Szerepkör:</strong> {{ user.role }}</p>
-        </div>
-        <div class="button-container">
-          <button mat-raised-button color="primary" (click)="logout()">Kijelentkezés</button>
-        </div>
+        <ng-container *ngIf="!editMode; else editFormTemplate">
+          <div class="profile-details">
+            <p><strong>Név:</strong> {{ user.displayName }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Szerepkör:</strong> {{ user.role }}</p>
+          </div>
+          <div class="button-container">
+            <button mat-raised-button color="primary" (click)="toggleEditMode()">Szerkesztés</button>
+            <button mat-raised-button color="primary" (click)="logout()">Kijelentkezés</button>
+            <button mat-raised-button color="warn" (click)="deleteProfile()">Profil törlése</button>
+          </div>
+        </ng-container>
+        <ng-template #editFormTemplate>
+          <form [formGroup]="editForm" (ngSubmit)="saveProfile()">
+            <mat-form-field appearance="fill">
+              <mat-label>Megjelenített név</mat-label>
+              <input matInput formControlName="displayName" required>
+              <mat-error *ngIf="editForm.get('displayName')?.hasError('required')">
+                A megjelenített név mező kötelező
+              </mat-error>
+            </mat-form-field>
+            <div class="button-container">
+              <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid">Mentés</button>
+              <button mat-stroked-button type="button" (click)="toggleEditMode()">Mégse</button>
+            </div>
+          </form>
+        </ng-template>
       </ng-container>
       <ng-template #noUser>
         <div class="intro-text">
