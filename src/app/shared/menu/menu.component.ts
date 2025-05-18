@@ -6,6 +6,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { AuthService } from '../service/auth-service.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-menu',
@@ -25,8 +28,10 @@ import { CommonModule } from '@angular/common';
 export class MenuComponent {
   isSidenavOpen = false;
   isLargeScreen = false;
+  user$: Observable<User | null>;
 
-  constructor() {
+  constructor(private authService: AuthService) {
+    this.user$ = this.authService.user$;
     this.checkScreenSize();
   }
 
@@ -37,11 +42,7 @@ export class MenuComponent {
 
   checkScreenSize() {
     this.isLargeScreen = window.innerWidth >= 768;
-    if (this.isLargeScreen) {
-      this.isSidenavOpen = true;
-    } else {
-      this.isSidenavOpen = false;
-    }
+    this.isSidenavOpen = this.isLargeScreen;
   }
 
   toggleSidenav() {
@@ -52,5 +53,9 @@ export class MenuComponent {
     if (!this.isLargeScreen) {
       this.isSidenavOpen = false;
     }
+  }
+
+  logout() {
+    this.authService.logout().subscribe();
   }
 }

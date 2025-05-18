@@ -1,0 +1,23 @@
+.register-card {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  @media (max-width: 600px) {
+    .register-card {
+      margin: 1rem;
+      padding: 0.5rem;
+    }
+  }

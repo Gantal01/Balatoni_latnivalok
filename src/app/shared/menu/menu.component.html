@@ -8,6 +8,14 @@
         <a mat-list-item routerLink="/del" (click)="closeSidenav()">Déli part</a>
         <a mat-list-item routerLink="/kapcsolat" (click)="closeSidenav()">Kapcsolat</a>
         <a mat-list-item routerLink="/kereses" (click)="closeSidenav()">Keresés</a>
+        <ng-container *ngIf="user$ | async as user; else guestLinksMobile">
+          <a mat-list-item routerLink="/profil" (click)="closeSidenav()">Profil</a>
+          <button mat-button (click)="logout(); closeSidenav()">Kijelentkezés</button>
+        </ng-container>
+        <ng-template #guestLinksMobile>
+          <a mat-list-item routerLink="/login" (click)="closeSidenav()">Bejelentkezés</a>
+          <a mat-list-item routerLink="/register" (click)="closeSidenav()">Regisztráció</a>
+        </ng-template>
       </mat-nav-list>
     </mat-sidenav>
   
@@ -24,7 +32,14 @@
           <a mat-button routerLink="/eszak">Északi part</a>
           <a mat-button routerLink="/del">Déli part</a>
           <a mat-button routerLink="/kapcsolat">Kapcsolat</a>
-          <a mat-button routerLink="/kereses">Keresés</a>
+          <ng-container *ngIf="user$ | async as user; else guestLinksDesktop">
+            <a mat-button routerLink="/profil">Profil</a>
+            <button mat-button (click)="logout()">Kijelentkezés</button>
+          </ng-container>
+          <ng-template #guestLinksDesktop>
+            <a mat-button routerLink="/login">Bejelentkezés</a>
+            <a mat-button routerLink="/register">Regisztráció</a>
+          </ng-template>
         </ng-container>
       </mat-toolbar>
   
